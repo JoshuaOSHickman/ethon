@@ -620,10 +620,10 @@ module Ethon
       #
       # @deprecated Please use the proxy option with protocoll handler.
       def proxytype=(value)
-        Ethon.logger.warn(
-          "ETHON: Easy#proxytype= is deprecated. "+
-          "Please use Easy#proxy= with protocoll handlers."
-        )
+        #Ethon.logger.warn(
+        #  "ETHON: Easy#proxytype= is deprecated. "+
+        #  "Please use Easy#proxy= with protocoll handlers."
+        #)
         Curl.set_option(:proxytype, value_for(value, :string), handle)
       end
 

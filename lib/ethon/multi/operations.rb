@@ -37,7 +37,7 @@ module Ethon
       # @example Perform multi.
       #   multi.perform
       def perform
-        Ethon.logger.debug("ETHON: started MULTI")
+        #Ethon.logger.debug("ETHON: started MULTI")
         while ongoing?
           run
           timeout = get_timeout
@@ -45,7 +45,7 @@ module Ethon
           reset_fds
           set_fds(timeout)
         end
-        Ethon.logger.debug("ETHON: performed MULTI")
+        #Ethon.logger.debug("ETHON: performed MULTI")
         nil
       end
 
@@ -58,11 +58,11 @@ module Ethon
       #
       # @deprecated It is no longer necessary to call prepare.
       def prepare
-        Ethon.logger.warn(
-          "ETHON: It is no longer necessay to call "+
-          "Multi#prepare. Its going to be removed "+
-          "in future versions."
-        )
+        #Ethon.logger.warn(
+        #  "ETHON: It is no longer necessay to call "+
+        #  "Multi#prepare. Its going to be removed "+
+        #  "in future versions."
+        #)
       end
 
       private
@@ -142,7 +142,7 @@ module Ethon
           next if msg[:code] != :done
           easy = easy_handles.find{ |e| e.handle == msg[:easy_handle] }
           easy.return_code = msg[:data][:code]
-          Ethon.logger.debug("ETHON:         performed #{easy.log_inspect}")
+          #Ethon.logger.debug("ETHON:         performed #{easy.log_inspect}")
           delete(easy)
           easy.complete
         end

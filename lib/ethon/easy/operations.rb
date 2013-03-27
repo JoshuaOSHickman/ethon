@@ -23,7 +23,7 @@ module Ethon
       def perform
         @return_code = Curl.easy_perform(handle)
         complete
-        Ethon.logger.debug("ETHON: performed #{self.log_inspect}")
+        #Ethon.logger.debug("ETHON: performed #{self.log_inspect}")
         @return_code
       end
 
@@ -35,11 +35,11 @@ module Ethon
       #
       # @deprecated It is no longer necessary to call prepare.
       def prepare
-        Ethon.logger.warn(
-          "ETHON: It is no longer necessay to call "+
-          "Easy#prepare. Its going to be removed "+
-          "in future versions."
-        )
+        #Ethon.logger.warn(
+        #  "ETHON: It is no longer necessay to call "+
+        #  "Easy#prepare. Its going to be removed "+
+        #  "in future versions."
+        #)
       end
     end
   end
